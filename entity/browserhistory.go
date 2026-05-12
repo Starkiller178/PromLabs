@@ -131,3 +131,12 @@ func (h *BrowserHistory) LoadFromFile(filename string) error {
 	}
 	return scanner.Err()
 }
+
+func (h *BrowserHistory) GetAll() []Entry {
+	arr := make([]Entry, 0, 10)
+	for _, e := range h.entries {
+		arr = append(arr, e)
+	}
+
+	return arr
+}
