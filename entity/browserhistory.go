@@ -133,11 +133,9 @@ func (h *BrowserHistory) LoadFromFile(filename string) error {
 }
 
 // Возвращвет слайс всех историй
+// Формирование слайса заменено на copy
 func (h *BrowserHistory) GetAll() []Entry {
 	arr := make([]Entry, 0, len(h.entries))
-	for _, e := range h.entries {
-		arr = append(arr, e)
-	}
-
+	copy(arr, h.entries)
 	return arr
 }
