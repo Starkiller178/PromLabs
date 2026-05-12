@@ -133,6 +133,7 @@ func (h *BrowserHistory) LoadFromFile(filename string) error {
 }
 
 // Возвращвет слайс всех историй
+// Формирует слайс с помощью for
 func (h *BrowserHistory) GetAll() []Entry {
 	arr := make([]Entry, 0, len(h.entries))
 	for _, e := range h.entries {
