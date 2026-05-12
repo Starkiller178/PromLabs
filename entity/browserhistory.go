@@ -131,3 +131,13 @@ func (h *BrowserHistory) LoadFromFile(filename string) error {
 	}
 	return scanner.Err()
 }
+
+// Возвращвет слайс всех историй
+func (h *BrowserHistory) GetAll() []Entry {
+	arr := make([]Entry, 0, len(h.entries))
+	for _, e := range h.entries {
+		arr = append(arr, e)
+	}
+
+	return arr
+}
