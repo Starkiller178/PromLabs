@@ -133,3 +133,16 @@ func TestSaveLoad(t *testing.T) {
 	}
 
 }
+
+func TestGetAll(t *testing.T) {
+	h := entity.New()
+
+	h.Add("https://google.com", true)
+	h.Add("https://github.com", true)
+	h.Add("https://google.com", false)
+
+	arr := h.GetAll()
+	if len(arr) != 3 {
+		t.Error("GetAll method is incorrect")
+	}
+}
